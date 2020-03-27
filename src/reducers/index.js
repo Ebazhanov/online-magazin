@@ -4,13 +4,12 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
 
-    switch (action.type) {
-        case 'BOOKS_LOADED':
-            return {
-                books: action.payload
-            };
-        default:
-            return state;
+    if (action.type === 'BOOKS_LOADED') {
+        return {
+            books: action.payload
+        };
+    } else {
+        return state;
     }
     return state;
 };
